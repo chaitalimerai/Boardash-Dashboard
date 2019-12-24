@@ -1,0 +1,58 @@
+// Font-family
+$font-family-base:          'Montserrat', sans-serif;
+
+// Font-size
+$font-size-base:            1rem;
+$font-size-sm:              $font-size-base * 0.9;
+
+// Font-weight
+$font-weight-normal:        400;
+$font-weight-light:         500;
+$font-weight-bold:          600;
+$font-weight-bolder:        800;
+
+// Sidebar width
+$primary-nav-width:         14.375rem;
+$secondary-nav-width:       17.5rem;
+$meeting-profile-height:    2.813rem;
+$meeting-profile-width:     2.813rem;
+
+// For browser support
+$enable-flex: true;
+
+//Transition
+$transition-base:           all .5s ease-in-out;
+
+//form-control
+$input-placeholder-color : $secondary;
+$input-bg: $light;
+// $input-padding-x: 30px;
+
+//Meeting bg height-width
+$meeting-icon-bg-height: 4.063rem;
+$meeting-icon-bg-width: 4.063rem;
+
+//user image height
+$user-img-height: 2.5rem;
+
+//button
+$btn-font-size: $font-size-sm;
+$btn-font-weight: $font-weight-bold;
+$body-color: $white;
+$circle-btn-height: 1.875rem;
+$circle-btn-width: 1.875rem;
+$btn-border-radius: 0;
+
+//cards
+$card-cap-bg: $white;
+$card-border-radius: 0.5rem;
+$card-border-color: $white;
+$card-img-height: 40px;
+$card-img-width: 40px;
+
+//Nav Pills
+$nav-pills-link-active-bg:      lighten($primary, 38%);
+$link-color:                    $secondary;
+$nav-pills-link-active-color:   $primary;
+$nav-pills-border-radius:       0;
+

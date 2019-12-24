@@ -1,0 +1,14 @@
+.form-control {
+  // padding-left: 40px;
+  &::placeholder {
+    padding-left: 30px;
+    color: $secondary;
+    font-weight: $font-weight-light;
+  }
+}
+
+.custom-dropdown {
+  @media (max-width: 768px) {
+    width: 100%;
+  } 
+}

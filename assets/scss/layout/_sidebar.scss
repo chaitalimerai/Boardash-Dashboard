@@ -1,0 +1,107 @@
+// Primary-Nav
+.primary-nav {
+  width: $primary-nav-width;
+  transition: $transition-base;
+  z-index: 2;
+  @media (max-width: 768px) {
+    position: absolute;
+    left: -280px;
+  }
+  .nav-pills {
+    .nav-link.active,
+    .show > .nav-link {
+      box-shadow: inset 3px 0px 0px $primary;
+      .nav-icon,
+      &:active,
+      &:hover {
+        color: $primary;
+      }
+    }
+    .nav-link {
+      color: $secondary;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-light;
+      fon .nav-icon {
+        color: $info;
+      }
+      &:hover {
+        box-shadow: inset 3px 0px 0px $primary;
+        background-color: lighten($primary, 38%);
+        color: $primary;
+        .nav-icon,
+        &:active,
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .primary-nav-ribbon {
+    width: 12px;
+    padding: 10px 0;
+    position: absolute;
+    top: -6px;
+    right: 30px;
+    text-align: center;
+    background: $success;
+   }
+  .primary-nav-ribbon:before {
+    height: 0;
+    width: 0;
+    right: -5.5px;
+    top: 0.1px;
+    border-bottom: 6px solid $success;
+    border-right: 6px solid transparent;
+  }
+  .primary-nav-ribbon:before, .primary-nav-ribbon:after {
+     content: "";
+     position: absolute;
+  }
+  .primary-nav-ribbon:after {
+     height: 0;
+     width: 0;
+     top: 19px;
+     left: 0;
+     border-left: 6px solid $success;
+     border-right: 6px solid $success;
+     border-bottom: 6px solid transparent;
+  }
+}
+#sidebar-toggle {
+  &:checked ~ {
+    .primary-nav {
+      left: 0;
+    }
+  }
+}
+
+#secondary-toggle {
+  &:checked ~ {
+    .secondary-nav {
+      right: 0;
+      width: 0;
+    }
+  }
+}
+
+// Secondary-Nav
+.secondary-nav {
+  width: $secondary-nav-width;
+  transition: $transition-base;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  .meeting-profile
+  {
+    height: $meeting-profile-height;
+    width: $meeting-profile-width;
+  }
+}
+
+#secondaryNav {
+  display: none;
+}

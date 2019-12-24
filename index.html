@@ -1,18 +1,673 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<style>
-body
-{
-Background-color:red;
-}	
-</style>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boardash-Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/styles.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
+    <!-- Main-Wrapper -->
+    <div class="d-flex flex-column overflow-hidden w-100 h-100">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg box-shadow navbar-light bg-white">
+            <div class="d-flex justify-content-between align-items-center flex-wrap w-100">
+                <label for="sidebar-toggle"
+                    class="sidebar-toggle d-flex d-lg-none text-dark cursor-pointer border-0 rounded-0 px-2 mb-0">
+                    <span class="fa fa-bars"></span>
+                </label>
+                <!-- Nav-brand -->
+                <div class="d-flex justify-content-center navbar-brand-width">
+                    <a href="index.html" class="navbar-brand text-dark font-weight-light p-0 m-0">Boardash</a>
+                </div>
+                <!-- Ends: Nav-brand -->
+                <button class="navbar-toggler border-0 rounded-0" type="button" data-toggle="collapse"
+                    data-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="fa fa-ellipsis-v text-dark"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarDropdown">
+                    <div class="d-flex align-items-center w-100 ml-0 ml-lg-2 mr-4">
+                        <div class="input-group d-flex justify-content-center">
+                            <div class="d-flex flex-wrap flex-lg-nowrap w-100 position-relative">
+                                <span class="search-icon fa fa-search position-absolute pl-3"></span>
+                                <input type="search" class="search-input form-control border-0 py-3 my-2 my-lg-0"
+                                    placeholder="Search" aria-label="search-form-control">
+                                <div class="input-group-append custom-dropdown my-1">
+                                    <button class="custom-dropdown btn btn-primary dropdown-toggle rounded-right px-4"
+                                        type="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Category</button>
+                                    <div class="dropdown-menu dropdown-menu-left dropdown-menu-lg-right">
+                                        <a class="dropdown-item" href="#">Category1</a>
+                                        <a class="dropdown-item" href="#">Category2</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Category3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center justify-content-lg-start align-items-center my-1">
+                        <img src="assets/images/profile-img.jpg" class="user-profile rounded-circle">
+                        <span class="text-secondary font-weight-light px-3 text-nowrap">Essie Howell</span>
+                        <button
+                            class="add-btn d-flex align-items-center justify-content-center btn btn-outline-info rounded-circle">
+                            <span class="fa fa-plus"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Ends: Navbar -->
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+        <!-- Wrapper -->
+        <section class="d-flex h-100 w-100 bg-light">
+            <!-- Sidebar -->
+            <input type="checkbox" name="sidebar-toggle" id="sidebar-toggle">
+            <aside class="primary-nav bg-white h-100 flex-shrink-0 mt-4 ml-4">
+                <div class="d-flex flex-column h-100 position-relative">
+                    <span class="primary-nav-ribbon"></span>
+                    <label for="sidebar-toggle"
+                        class="sidebar-toggle d-flex d-lg-none justify-content-end text-dark cursor-pointer p-2 mb-0">
+                        <span class="fa fa-times"></span>
+                    </label>
+                    <div class="nav-header pt-4">
+                        <figure class="d-flex align-items-center px-4">
+                            <img src="assets/images/profile-img.jpg" class="user-profile rounded">
+                            <figcaption class="d-flex flex-column pl-3">
+                                <h5 class="text-secondary font-weight-light mb-0">Welcome Essie</h5>
+                                <h6 class="text-info font-weight-light">Admin Head</h6>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="nav-content overflow-auto h-100 pb-5">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                            aria-orientation="vertical">
+                            <a class="nav-link" id="v-pills-overview-tab" data-toggle="pill" href="#v-pills-overview"
+                                role="tab" aria-controls="v-pills-overview" aria-selected="true">
+                                <span class="fa fa-th-large nav-icon pl-4"></span>
+                                <span class="pl-2">Overview</span>
+                            </a>
+                            <a class="nav-link" id="v-pills-reservation-tab" data-toggle="pill"
+                                href="#v-pills-reservation" role="tab" aria-controls="v-pills-reservation"
+                                aria-selected="true">
+                                <span class="fa fa-tags nav-icon pl-4"></span>
+                                <span class="pl-2">Reservation</span>
+                            </a>
+                            <a class="nav-link active" id="v-pills-meeting-tab" data-toggle="pill"
+                                href="#v-pills-meeting" role="tab" aria-controls="v-pills-meeting" aria-selected="true">
+                                <span class="fa fa-window-maximize nav-icon pl-4"></span>
+                                <span class="pl-2">Meeting</span>
+                            </a>
+                            <a class="nav-link" id="v-pills-customers-tab" data-toggle="pill" href="#v-pills-customers"
+                                role="tab" aria-controls="v-pills-customers" aria-selected="true">
+                                <span class="fa fa-users nav-icon pl-4"></span>
+                                <span class="pl-2">Customers</span>
+                            </a>
+                            <a class="nav-link" id="v-pills-ticket-tab" data-toggle="pill" href="#v-pills-ticket"
+                                role="tab" aria-controls="v-pills-ticket" aria-selected="true">
+                                <span class="fa fa-ticket nav-icon pl-4"></span>
+                                <span class="pl-2">Ticket</span>
+                            </a>
+                            <a class="nav-link" id="v-pills-support-tab" data-toggle="pill" href="#v-pills-support"
+                                role="tab" aria-controls="v-pills-support" aria-selected="true">
+                                <span class="fa fa-comments nav-icon pl-4"></span>
+                                <span class="pl-2">Support</span>
+                            </a>
+                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                                role="tab" aria-controls="v-pills-profile" aria-selected="true">
+                                <span class="fa fa-user nav-icon pl-4"></span>
+                                <span class="pl-2">Profile</span>
+                            </a>
+                            <a class="nav-link mt-5" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                                role="tab" aria-controls="v-pills-profile" aria-selected="true">
+                                <span class="fa fa-power-off nav-icon pl-4"></span>
+                                <span class="pl-2">Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Ends: Sidebar -->
 
+            <!-- Content-Wrapper -->
+            <main class="container-fluid d-flex flex-column bg-light w-100 h-100 overflow-auto p-4">
+                <h2 class="font-weight-light text-dark m-0 p-0">Meetings</h2>
+                <!-- Meeting Row -->
+                <div class="d-flex flex-wrap rounded bg-white p-3 mt-3">
+                    <div class="col-12 col-md-6 col-xl-3 d-flex align-items-center custom-border-right">
+                        <div
+                            class="meeting-icon-bg d-flex align-items-center justify-content-center bg-light rounded-circle px-4 py-3 my-2 my-xl-0">
+                            <span class="fa fa-users text-info font-weight-bold"></span>
+                        </div>
+                        <div class="d-flex flex-column pl-3">
+                            <h5 class="font-weight-bold text-dark mb-0">No of meetings</h5>
+                            <div class="d-flex align-items-baseline">
+                                <h3 class="text-dark font-weight-bold mb-0">36</h3>
+                                <h6 class="text-info font-weight-bold pl-2 mb-0">This Month</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3 d-flex align-items-center custom-border-right">
+                        <div
+                            class="meeting-icon-bg d-flex align-items-center justify-content-center bg-light rounded-circle px-4 py-3 my-2 my-xl-0">
+                            <span class="fa fa-calendar text-info font-weight-bold"></span>
+                        </div>
+                        <div class="d-flex flex-column pl-3">
+                            <h5 class="font-weight-bold text-dark mb-0">Rescheduled meetings</h5>
+                            <div class="d-flex align-items-baseline">
+                                <h3 class="text-dark font-weight-bold mb-0">14</h3>
+                                <h6 class="text-info font-weight-bold pl-2 mb-0">This Month</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3 d-flex align-items-center custom-border-right">
+                        <div
+                            class="meeting-icon-bg d-flex align-items-center justify-content-center bg-light rounded-circle px-4 py-3 my-2 my-xl-0">
+                            <span class="fa fa-users text-info font-weight-bold"></span>
+                        </div>
+                        <div class="d-flex flex-column pl-3">
+                            <h5 class="font-weight-bold text-dark mb-0">Cancelled meetings</h5>
+                            <div class="d-flex align-items-baseline">
+                                <h3 class="text-dark font-weight-bold mb-0">20</h3>
+                                <h6 class="text-info font-weight-bold pl-2 mb-0">This Month</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3 d-flex align-items-center">
+                        <div
+                            class="meeting-icon-bg d-flex align-items-center justify-content-center bg-light rounded-circle px-4 py-3 my-2 my-xl-0">
+                            <span class="fa fa-calendar text-info font-weight-bold"></span>
+                        </div>
+                        <div class="d-flex flex-column pl-3">
+                            <h5 class="font-weight-bold text-dark mb-0">No of meetings</h5>
+                            <div class="d-flex align-items-baseline">
+                                <h3 class="text-dark font-weight-bold mb-0">36</h3>
+                                <h6 class="text-info font-weight-bold pl-2 mb-0">This Month</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends: Meeting Row -->
+
+                <div class="d-flex flex-wrap my-4">
+                    <h5 class="text-dark font-weight-bold mb-0">Today - 8 meeting</h5>
+                </div>
+
+                <!-- Cards -->
+                <div class="d-flex flex-wrap">
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3 px-0 mb-4">
+                        <div class="h-100 mr-0 mr-md-4">
+                            <div class="card h-100 border-0 box-shadow">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <div class="d-flex">
+                                        <img src="assets/images/1.jpg" class="card-img rounded-circle"
+                                            alt="Meeting Profile1">
+                                        <div class="d-flex flex-column pl-3">
+                                            <h5 class="card-title text-dark font-weight-bold mb-0">Design Catchup</h5>
+                                            <h6 class="text-info font-weight-light mb-0">chaitali@123gmail.com
+                                            </h6>
+                                            <h5 class="text-secondary font-weight-bold mb-0">10 : 30 PM</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body px-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-primary font-weight-bold mb-0">9 members going</h5>
+                                        <h5 class="text-danger font-weight-bold mb-0">2 Pending</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center position-relative pt-4">
+                                            <img src="assets/images/4.jpg" class="member-img member-img1 rounded-circle"
+                                                alt="">
+                                            <img src="assets/images/1.jpg"
+                                                class="member-img member-img2 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/3.jpg"
+                                                class="member-img member-img3 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/2.jpg"
+                                                class="member-img member-img4 position-absolute rounded-circle" alt="">
+                                        </div>
+                                        <h5 class="text-secondary font-weight-bold mb-0 pt-4">+5 more</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center border-top p-0">
+                                    <button type="button"
+                                        class="btn btn-white w-100 rounded-0 font-weight-bold text-secondary p-3">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3 px-0 mb-4">
+                        <div class="h-100 mr-0 mr-xl-4">
+                            <div class="card h-100 border-0 box-shadow">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <div class="d-flex">
+                                        <img src="assets/images/2.jpg" class="card-img rounded-circle"
+                                            alt="Meeting Profile1">
+                                        <div class="d-flex flex-column pl-3">
+                                            <h5 class="card-title text-dark font-weight-bold mb-0">Design Catchup</h5>
+                                            <h6 class="text-info font-weight-light mb-0">chaitali@123gmail.com
+                                            </h6>
+                                            <h5 class="text-secondary font-weight-bold mb-0">10 : 30 PM</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body px-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-primary font-weight-bold mb-0">9 members going</h5>
+                                        <h5 class="text-danger font-weight-bold mb-0">2 Pending</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center pt-4">
+                                        <div class="d-flex position-relative">
+                                            <img src="assets/images/5.jpg" class="member-img member-img1 rounded-circle"
+                                                alt="">
+                                            <img src="assets/images/6.jpg"
+                                                class="member-img member-img2 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/2.jpg"
+                                                class="member-img member-img3 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/1.jpg"
+                                                class="member-img member-img4 position-absolute rounded-circle" alt="">
+                                        </div>
+                                        <h5 class="text-secondary font-weight-bold mb-0">+5 more</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center border-top p-0">
+                                    <button type="button" onclick="callapseSidebar('secondaryNav')"
+                                        class="btn btn-white active w-100 rounded-0 font-weight-bold text-secondary p-3">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3 px-0 mb-4">
+                        <div class="h-100 mr-0 mr-md-4">
+                            <div class="card h-100 border-0 box-shadow">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <div class="d-flex">
+                                        <img src="assets/images/3.jpg" class="card-img rounded-circle"
+                                            alt="Meeting Profile1">
+                                        <div class="d-flex flex-column pl-3">
+                                            <h5 class="card-title text-dark font-weight-bold mb-0">Design Catchup</h5>
+                                            <h6 class="text-info font-weight-light mb-0">chaitali@123gmail.com
+                                            </h6>
+                                            <h5 class="text-secondary font-weight-bold mb-0">10 : 30 PM</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body px-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-primary font-weight-bold mb-0">9 members going</h5>
+                                        <h5 class="text-danger font-weight-bold mb-0">2 Pending</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center pt-4">
+                                        <div class="d-flex position-relative">
+                                            <img src="assets/images/3.jpg" class="member-img member-img1 rounded-circle"
+                                                alt="">
+                                            <img src="assets/images/1.jpg"
+                                                class="member-img member-img2 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/8.jpg"
+                                                class="member-img member-img3 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/7.jpg"
+                                                class="member-img member-img4 position-absolute rounded-circle" alt="">
+                                        </div>
+                                        <h5 class="text-secondary font-weight-bold mb-0">+5 more</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center border-top p-0">
+                                    <button type="button"
+                                        class="btn btn-white w-100 rounded-0 font-weight-bold text-secondary p-3">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3 px-0 mb-4">
+                        <div class="h-100">
+                            <div class="card h-100 border-0 box-shadow">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <div class="d-flex">
+                                        <img src="assets/images/4.jpg" class="card-img rounded-circle"
+                                            alt="Meeting Profile1">
+                                        <div class="d-flex flex-column pl-3">
+                                            <h5 class="card-title text-dark font-weight-bold mb-0">Design Catchup</h5>
+                                            <h6 class="text-info font-weight-light mb-0">chaitali@123gmail.com
+                                            </h6>
+                                            <h5 class="text-secondary font-weight-bold mb-0">10 : 30 PM</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body px-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-primary font-weight-bold mb-0">9 members going</h5>
+                                        <h5 class="text-danger font-weight-bold mb-0">2 Pending</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center pt-4">
+                                        <div class="d-flex position-relative">
+                                            <img src="assets/images/1.jpg" class="member-img member-img1 rounded-circle"
+                                                alt="">
+                                            <img src="assets/images/8.jpg"
+                                                class="member-img member-img2 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/5.jpg"
+                                                class="member-img member-img3 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/3.jpg"
+                                                class="member-img member-img4 position-absolute rounded-circle" alt="">
+                                        </div>
+                                        <h5 class="text-secondary font-weight-bold mb-0">+5 more</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center border-top p-0">
+                                    <button type="button"
+                                        class="btn btn-white w-100 rounded-0 font-weight-bold text-secondary p-3">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap mb-5">
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3 px-0 mb-4">
+                        <div class="h-100 mr-0 mr-md-4">
+                            <div class="card h-100 border-0 box-shadow">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <div class="d-flex">
+                                        <img src="assets/images/5.jpg" class="card-img rounded-circle"
+                                            alt="Meeting Profile1">
+                                        <div class="d-flex flex-column pl-3">
+                                            <h5 class="card-title text-dark font-weight-bold mb-0">Design Catchup</h5>
+                                            <h6 class="text-info font-weight-light mb-0">chaitali@123gmail.com
+                                            </h6>
+                                            <h5 class="text-secondary font-weight-bold mb-0">10 : 30 PM</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body px-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-primary font-weight-bold mb-0">9 members going</h5>
+                                        <h5 class="text-danger font-weight-bold mb-0">2 Pending</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center pt-4">
+                                        <div class="d-flex position-relative">
+                                            <img src="assets/images/3.jpg" class="member-img member-img1 rounded-circle"
+                                                alt="">
+                                            <img src="assets/images/1.jpg"
+                                                class="member-img member-img2 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/8.jpg"
+                                                class="member-img member-img3 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/7.jpg"
+                                                class="member-img member-img4 position-absolute rounded-circle" alt="">
+                                        </div>
+                                        <h5 class="text-secondary font-weight-bold mb-0">+5 more</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center border-top p-0">
+                                    <button type="button"
+                                        class="btn btn-white w-100 rounded-0 font-weight-bold text-secondary p-3">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3 px-0 mb-4">
+                        <div class="h-100 mr-0 mr-xl-4">
+                            <div class="card h-100 border-0 box-shadow">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <div class="d-flex">
+                                        <img src="assets/images/6.jpg" class="card-img rounded-circle"
+                                            alt="Meeting Profile1">
+                                        <div class="d-flex flex-column pl-3">
+                                            <h5 class="card-title text-dark font-weight-bold mb-0">Design Catchup</h5>
+                                            <h6 class="text-info font-weight-light mb-0">chaitali@123gmail.com
+                                            </h6>
+                                            <h5 class="text-secondary font-weight-bold mb-0">10 : 30 PM</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body px-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-primary font-weight-bold mb-0">9 members going</h5>
+                                        <h5 class="text-danger font-weight-bold mb-0">2 Pending</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center pt-4">
+                                        <div class="d-flex position-relative">
+                                            <img src="assets/images/6.jpg" class="member-img member-img1 rounded-circle"
+                                                alt="">
+                                            <img src="assets/images/4.jpg"
+                                                class="member-img member-img2 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/1.jpg"
+                                                class="member-img member-img3 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/2.jpg"
+                                                class="member-img member-img4 position-absolute rounded-circle" alt="">
+                                        </div>
+                                        <h5 class="text-secondary font-weight-bold mb-0">+5 more</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center border-top p-0">
+                                    <button type="button"
+                                        class="btn btn-white w-100 rounded-0 font-weight-bold text-secondary p-3">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3 px-0 mb-4">
+                        <div class="h-100 mr-0 mr-md-4">
+                            <div class="card h-100 border-0 box-shadow">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <div class="d-flex">
+                                        <img src="assets/images/7.jpg" class="card-img rounded-circle"
+                                            alt="Meeting Profile1">
+                                        <div class="d-flex flex-column pl-3">
+                                            <h5 class="card-title text-dark font-weight-bold mb-0">Design Catchup</h5>
+                                            <h6 class="text-info font-weight-light mb-0">chaitali@123gmail.com
+                                            </h6>
+                                            <h5 class="text-secondary font-weight-bold mb-0">10 : 30 PM</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body px-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-primary font-weight-bold mb-0">9 members going</h5>
+                                        <h5 class="text-danger font-weight-bold mb-0">2 Pending</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center pt-4">
+                                        <div class="d-flex position-relative">
+                                            <img src="assets/images/5.jpg" class="member-img member-img1 rounded-circle"
+                                                alt="">
+                                            <img src="assets/images/1.jpg"
+                                                class="member-img member-img2 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/2.jpg"
+                                                class="member-img member-img3 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/3.jpg"
+                                                class="member-img member-img4 position-absolute rounded-circle" alt="">
+                                        </div>
+                                        <h5 class="text-secondary font-weight-bold mb-0">+5 more</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center border-top p-0">
+                                    <button type="button"
+                                        class="btn btn-white w-100 rounded-0 font-weight-bold text-secondary p-3">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3 px-0 mb-4">
+                        <div class="h-100">
+                            <div class="card h-100 border-0 box-shadow">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <div class="d-flex">
+                                        <img src="assets/images/8.jpg" class="card-img rounded-circle"
+                                            alt="Meeting Profile1">
+                                        <div class="d-flex flex-column pl-3">
+                                            <h5 class="card-title text-dark font-weight-bold mb-0">Design Catchup</h5>
+                                            <h6 class="text-info font-weight-light mb-0">chaitali@123gmail.com
+                                            </h6>
+                                            <h5 class="text-secondary font-weight-bold mb-0">10 : 30 PM</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body px-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-primary font-weight-bold mb-0">9 members going</h5>
+                                        <h5 class="text-danger font-weight-bold mb-0">2 Pending</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center pt-4">
+                                        <div class="d-flex position-relative">
+                                            <img src="assets/images/3.jpg" class="member-img member-img1 rounded-circle"
+                                                alt="">
+                                            <img src="assets/images/1.jpg"
+                                                class="member-img member-img2 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/8.jpg"
+                                                class="member-img member-img3 position-absolute rounded-circle" alt="">
+                                            <img src="assets/images/7.jpg"
+                                                class="member-img member-img4 position-absolute rounded-circle" alt="">
+                                        </div>
+                                        <h5 class="text-secondary font-weight-bold mb-0">+5 more</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center border-top p-0">
+                                    <button type="button"
+                                        class="btn btn-white w-100 rounded-0 font-weight-bold text-secondary p-3">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ends: Cards -->
+            </main>
+            <input type="checkbox" name="secondary-toggle" id="secondary-toggle">
+            <aside id="secondaryNav" class="secondary-nav bg-primary flex-column position-absolute text-dark h-100">
+                <div class="bg-white d-flex flex-column overflow-auto h-100">
+                    <label for="secondary-toggle"
+                        class="secondary-toggle d-flex d-lg-none justify-content-end text-dark cursor-pointer p-2 mb-0">
+                        <span class="fa fa-times"></span>
+                    </label>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item pl-5 py-3">
+                            <h6 class="d-flex justify-content-end text-info font-weight-bold mb-0">
+                                <time>9.45</time>
+                            </h6>
+                            <h5 class="d-flex text-dark font-weight-bold py-1 mb-0">
+                                Catch up with simon
+                            </h5>
+                        </li>
+                        <li class="list-group-item py-3">
+                            <div class="d-flex align-items-baseline justify-content-end">
+                                <span class="badge badge-danger d-flex bg-danger p-1 mr-3 text-danger"></span>
+                                <h6 class="text-info font-weight-bold"><time>9.45</time></h6>
+                            </div>
+                            <div class="row flex-wrap align-items-center pl-4">
+                                <div class="col-3">
+                                    <img src="assets/images/profile-img.jpg" class="meeting-profile rounded-circle mr-3"
+                                        alt="Meeting Profile">
+                                </div>
+                                <div class="col-9">
+                                    <h5 class="d-flex text-dark font-weight-bold mb-0">
+                                        Mike added you in the meeting
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row align-items-center pl-4 pt-4">
+                                <div class="col-3"></div>
+                                <div class="col-9 d-flex align-items-center">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                                        <label class="custom-control-label" for="customSwitch1"></label>
+                                    </div>
+                                    <h6 class="text-primary font-weight-bold mb-0">
+                                        Going
+                                    </h6>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-3">
+                            <div class="d-flex align-items-baseline justify-content-end">
+                                <span class="badge badge-danger d-flex bg-danger p-1 mr-3 text-danger"></span>
+                                <h6 class="text-info font-weight-bold"><time>9.45</time></h6>
+                            </div>
+                            <div class="pl-4">
+                                <h5 class="text-dark font-weight-bold mb-0">Sales Presentation with Miguel - Daily
+                                    catchup</h5>
+                                <h5 class="text-primary font-weight-bold mb-0">20 peoples joining</h5>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0 py-3">
+                            <div class="d-flex align-items-baseline justify-content-end">
+                                <h6 class="text-info font-weight-bold"><time>12.45</time></h6>
+                            </div>
+                            <div class="pl-4">
+                                <h5 class="text-dark font-weight-bold mb-2">Team voting for outing</h5>
+                                <div class="custom-control custom-checkbox py-2 align-items-center">
+                                    <input type="checkbox" class="custom-control-input" id="dinnerCheckbox" checked>
+                                    <label class="custom-control-label mb-0" for="dinnerCheckbox">
+                                        <h5 class="text-dark font-weight-bold mb-0">Dinner</h5>
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-checkbox py-2">
+                                    <input type="checkbox" class="custom-control-input" id="movieSpidermanCheckbox">
+                                    <label class="custom-control-label" for="movieSpidermanCheckbox">
+                                        <h5 class="text-dark font-weight-bold mb-0">Movie-Spiderman</h5>
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-checkbox py-2">
+                                    <input type="checkbox" class="custom-control-input" id="footballTournamentCheckbox">
+                                    <label class="custom-control-label" for="footballTournamentCheckbox">
+                                        <h5 class="text-dark font-weight-bold mb-0">Football Tournament</h5>
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-checkbox py-2">
+                                    <input type="checkbox" class="custom-control-input" id="mountainTripCheckbox">
+                                    <label class="custom-control-label" for="mountainTripCheckbox">
+                                        <h5 class="text-dark font-weight-bold mb-0">Mountain Trip</h5>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item px-0 pt-3 mt-5 mb-0 pb-0">
+                            <div class="btn-group w-100 border-info border-top border-bottom pb-0" role="group"
+                                aria-label="refreshCloseBtnGrp">
+                                <button type="button" class="btn btn-white text-dark py-2 border-right">Refresh</button>
+                                <button type="button" class="btn btn-white text-dark py-2" disabled>Close</button>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center py-5">
+                                <div
+                                    class="meeting-icon-bg shadow-lg d-flex align-items-center justify-content-center bg-primary rounded-circle px-4 py-3 my-2 my-xl-0">
+                                    <span class="fa fa-bell-o text-white"></span>
+                                </div>
+                                <div class="d-flex flex-column pl-4">
+                                    <h4 class="font-weight-bold text-dark mb-0">Inbox</h4>
+                                    <h4 class="font-weight-light text-info">03 September</h4>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- Content-Wrapper -->
+        </section>
+        <!-- Ends: Wrapper -->
+    </div>
+    <!-- Ends: Main-Wrapper -->
+    <script src="assets/scss/vendor/bootstrap/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/scss/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="assets/scss/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/scss/vendor/js/main.js"></script>
 </body>
+
 </html>

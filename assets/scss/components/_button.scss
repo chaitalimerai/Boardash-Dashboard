@@ -1,0 +1,14 @@
+
+.btn-white
+{
+    &.active,
+    &:hover{
+        background-color: $primary;
+        color: $white !important;
+    }
+}
+.add-btn
+{
+    height: $circle-btn-height;
+    width: $circle-btn-width;
+}
